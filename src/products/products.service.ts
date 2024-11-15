@@ -60,15 +60,12 @@ export class ProductsService extends PrismaClient implements OnModuleInit{
 
     //return `This action update a #${id} products`;
     
-    /*
     const { id: __, ...data } = updateProductDto;
-    await this.findOne(id);
-    */
     await this.findOne(id);
 
     return this.product.update({
       where: { id },
-      data: updateProductDto,
+      data: data,
     });
     
   }
